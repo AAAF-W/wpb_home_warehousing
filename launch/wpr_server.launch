@@ -1,0 +1,21 @@
+<launch>
+
+  <!-- WPR server -->
+  <node name="wpr_server_node" pkg="wpr_warehousing_monitor" type="wpr_server_node" output="screen"/>
+
+  <!-- Map server -->
+  <node name="map_server" pkg="map_server" type="map_server" args="$(find wpr_warehousing_monitor)/maps/map.yaml"/>
+  
+  <!-- Map tools  -->
+  <node pkg="waterplus_map_tools" type="wp_manager" name="wp_manager" output="screen" />
+
+  <!-- Teleop robot -->
+  <node name="robot_teleop_joystick" pkg="wpr_warehousing_monitor" type="robot_teleop_joystick"/>
+
+  <!-- Joystick node -->
+  <node respawn="true" pkg="joy" type="joy_node" name="wpr_joy_node" >
+    <param name="dev" type="string" value="/dev/input/js0" />
+    <param name="deadzone" value="0.12" />
+  </node>
+
+</launch>

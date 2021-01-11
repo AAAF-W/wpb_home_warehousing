@@ -1,0 +1,9 @@
+<library path="lib/libwpr_warehousing_monitor">
+ <class name="wpr_warehousing_monitor/Switch"
+        type="wpr_warehousing_monitor::SwitchPanel"
+        base_class_type="rviz::Panel">
+   <description>
+     A panel widget control the WPR Warehousing system.
+   </description>
+ </class>
+</library> 

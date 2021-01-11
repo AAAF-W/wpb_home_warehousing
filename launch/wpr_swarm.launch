@@ -1,0 +1,6 @@
+<launch>
+
+  <node name="wpr_server_node" pkg="wpr_warehousing_monitor" type="wpr_server_node" output="screen"/>
+  <node name="wpr_swarm_fake" pkg="wpr_warehousing_monitor" type="wpr_swarm_fake" output="screen"/>
+
+</launch>
