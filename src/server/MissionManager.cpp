@@ -63,10 +63,12 @@ void CMissionManager::Initial()
 {
     robot_list = new stRobotState[ROBOT_NUM];
     memset(robot_list,0,ROBOT_NUM*sizeof(stRobotState));
-    /////////////////////////////////////////////////////////////////////
-    robot_list[0].info.dev_type = DEV_WPB_HOME; //避免出现启明1模型残留在原点
-    robot_list[0].info.id = 1;
-    /////////////////////////////////////////////////////////////////////
+    for(int i=0;i<ROBOT_NUM;i++)
+    {
+        robot_list[i].info.dev_type = DEV_WPB_HOME; 
+        robot_list[i].info.id = i+1;
+        robot_list[i].info.map_y = 100;
+    }
     arCmdSend = new CServerCmdSend[ROBOT_NUM];
     for(int i=0;i<ROBOT_NUM;i++)
     {
